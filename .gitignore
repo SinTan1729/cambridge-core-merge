@@ -1,0 +1,15 @@
+# pyenv
+.python-version
+
+# Setuptools distribution folder.
+/dist/
+/build/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+/*.egg
+
+/__pycache__/
+
+# Ingore .venv
+.venv
