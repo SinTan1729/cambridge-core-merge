@@ -20,3 +20,4 @@ Available options:
   -c, --cover COVER     The path of the cover file. (Must be JPG.)
 ```
 
+[Link to the base repo.](https://git.sayantansantra.com/SinTan1729/cambridge-core-merge)
