@@ -14,7 +14,7 @@ from tempfile import TemporaryFile
 def main():
     parser = ArgumentParser(
         prog="cambridge-core-merge",
-        description="A python script to merge books downloaded from Cambridge Core into a single PDF file.",
+        description="A python script to merge books downloaded from Cambridge Core into a single PDF file",
         epilog="Copyright (C) 2025  Sayantan Santra",
     )
     parser.add_argument(
@@ -36,11 +36,13 @@ def main():
     for file in filelist:
         print("Adding " + file)
         parts = file.split("_", 4)
+        # This is just using how the naming scheme works for these files from Cambridge Core
         name = parts[4][:-4].replace("_", " ")
         start_index = merger.get_num_pages()
 
         with zip.open(file) as pdf:
             merger.append(pdf)
+        # Need to do this here for keeping proper order of the bookmarks
         if first_bookmark and args.cover is not None:
             cover = Image.open(args.cover, "r")
             h = merger.pages[0].mediabox.height
@@ -54,6 +56,7 @@ def main():
             merger.insert_page(PdfReader(temp).get_page(0), 0)
             merger.add_outline_item("Cover", 0)
             start_index += 1
+            # I know, this is a weird hack, r is the 18th letter in the alphabet lol
             merger.set_page_label(0, 0, "/a", prefix="cove", start=18)
             first_bookmark = False
             temp.close()
@@ -61,12 +64,14 @@ def main():
 
         startpage_str = parts[2]
         endpage_str = parts[3]
+        # '/D' means the decimal numbers
         pagestyle = "/D"
         startpage, endpage = None, None
         try:
             startpage = int(startpage_str)
             endpage = int(endpage_str)
         except ValueError:
+            # '/r' means the roman numbers
             pagestyle = "/r"
             startpage = fromRoman(startpage_str)
             endpage = fromRoman(endpage_str)
