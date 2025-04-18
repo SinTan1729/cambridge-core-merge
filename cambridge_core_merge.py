@@ -14,7 +14,7 @@ from tempfile import TemporaryFile
 def main():
     parser = ArgumentParser(
         prog="cambridge-core-merge",
-        description="A python script to merge books downloaded from Cambridge Core into a single PDF file",
+        description="A python script to merge books downloaded from Cambridge Core into a single PDF file.",
         epilog="Copyright (C) 2025  Sayantan Santra",
     )
     parser.add_argument(

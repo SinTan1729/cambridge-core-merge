@@ -4,7 +4,7 @@ authors = [{ name = "Sayantan Santra", email = "sayantan.santra689@gmail.com" }]
 license = "GPL-3.0-only"
 classifiers = ["Programming Language :: Python :: 3"]
 version = "0.1.0"
-description = "A python script to merge books downloaded from Cambridge Core into a single PDF file"
+description = "A python script to merge books downloaded from Cambridge Core into a single PDF file."
 readme = "README.md"
 keywords = ["script", "books", "merge", "pdf", "cambridge-core"]
 requires-python = ">=3.8"
