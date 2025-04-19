@@ -17,7 +17,7 @@ Available options:
   -z, --zipfile ZIPFILE
                         The path of the zip file obtained from Cambridge Core.
   -n, --name NAME       The path of the final PDF file.
-  -c, --cover COVER     The path of the cover file. (Must be JPG.)
+  -c, --cover COVER     The path of the cover file. (Ideally JPG.)
 ```
 
 [Link to the base repo.](https://git.sayantansantra.com/SinTan1729/cambridge-core-merge)

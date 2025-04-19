@@ -24,7 +24,7 @@ def main():
         help="The path of the zip file obtained from Cambridge Core.",
     )
     parser.add_argument("-n", "--name", required=True, help="The path of the final PDF file.")
-    parser.add_argument("-c", "--cover", help="The path of the cover file. (Must be JPG.)")
+    parser.add_argument("-c", "--cover", help="The path of the cover file. (Ideally JPG.)")
     args = parser.parse_args()
 
     zip = ZipFile(args.zipfile, "r")
